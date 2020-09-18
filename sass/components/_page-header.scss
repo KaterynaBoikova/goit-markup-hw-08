@@ -1,0 +1,58 @@
+header {
+  border: 1px solid getColor("header-line");
+}
+.navmain {
+  @extend %flex-center;
+}
+.top-nav {
+  @extend %flex-center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.state-color {
+  @include transitioned(color);
+  &:hover,
+  &:focus {
+    color: getColor("accent");
+  }
+}
+.current::after {
+  content: "";
+  height: 4px;
+  background: getColor("accent");
+  border-radius: 2px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.top-nav-links {
+  display: flex;
+  a {
+    @extend %top-nav-a;
+    color: getColor("text-primary");
+    position: relative;
+  }
+  li:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.top-nav-contacts {
+  display: flex;
+  margin-left: auto;
+  a {
+    @extend %flex-center;
+    @extend %top-nav-a;
+    color: getColor("text-secondary");
+  }
+  .svg-icon {
+    fill: currentColor;
+    margin-right: 10px;
+  }
+  li + li {
+    margin-left: 30px;
+  }
+}

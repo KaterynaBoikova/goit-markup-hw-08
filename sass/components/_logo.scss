@@ -1,0 +1,16 @@
+.logo {
+  font-family: getFont("logo"), getFont("auto");
+  color: getColor("accent");
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+}
+.logo.toplogo {
+  margin-right: 93px;
+}
+.logo-black {
+  color: getColor("text-primary");
+}
+.logo-white {
+  color: getColor("white");
+}

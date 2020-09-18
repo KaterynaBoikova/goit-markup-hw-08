@@ -1,0 +1,64 @@
+.portfolio-cards h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.06em;
+  color: getColor("text-primary");
+  margin-top: 20px;
+  padding-left: 24px;
+}
+.portfolio-cards .category {
+  font-size: 16px;
+  line-height: 30px;
+  color: getColor("text-secondary");
+  margin-bottom: 20px;
+  margin-top: 4px;
+  padding-left: 24px;
+}
+.portfolio-cards {
+  @extend %flex-between;
+  flex-wrap: wrap;
+}
+.portfolio-gallery {
+  padding-top: 25px;
+  padding-bottom: 94px;
+}
+
+.portfolio-cards li {
+  margin-bottom: 30px;
+  border: 1px solid #eeeeee;
+  position: relative;
+  @include transitioned(box-shadow);
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+.portfolio-cards li:nth-last-child(-n + 3) {
+  margin-bottom: 0px;
+}
+
+.text-over {
+  color: getColor("white");
+  padding: 63px 24px 63px 24px;
+  font-size: 18px;
+  line-height: 28px;
+}
+.portfolio-img {
+  position: relative;
+  overflow: hidden;
+  height: 294px;
+}
+.overlay {
+  position: absolute;
+  background: rgba(33, 150, 243, 0.9);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translatey(100%);
+  @include transitioned(transform);
+}
+.portfolio-cards li:hover .overlay {
+  transform: translatey(0);
+}

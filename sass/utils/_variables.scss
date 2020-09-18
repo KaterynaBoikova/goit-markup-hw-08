@@ -1,0 +1,73 @@
+$colors: (
+  "text-primary": #212121,
+  "text-secondary": #757575,
+  "text-light": rgba(255, 255, 255, 0.6),
+  "accent": #2196f3,
+  "white": #ffffff,
+  "bg-secondary": #2f303a,
+  "bg-dark": #f5f4fa,
+  "gradient": rgba(47, 48, 58, 0.4),
+  "bg-section-what-we-do": rgba(47, 48, 58, 0.8),
+  "icon-color": #afb1b8,
+  "header-line": #ececec,
+  "bg-backdrop": rgba(0, 0, 0, 0.2),
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
+$fonts: (
+  "logo": "Raleway",
+  "main": "Roboto",
+  "auto": sans-serif,
+);
+
+@function getFont($key) {
+  @return map-get($fonts, $key);
+}
+
+@mixin transitioned($property, $duration: 250ms) {
+  transition: $property $duration cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+}
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+%top-nav-a {
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+%icons-social {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  @extend %flex-center;
+  justify-content: center;
+  background: getColor("white");
+  @include transitioned(color);
+  @include transitioned(background);
+  &:hover,
+  &:focus {
+    background: getColor("accent");
+    color: getColor("white");
+  }
+}
+%bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+%text-bold {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+}

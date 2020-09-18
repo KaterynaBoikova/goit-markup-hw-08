@@ -1,0 +1,99 @@
+.footer-contacts {
+  margin-top: 9px;
+}
+.footer-address {
+  margin-top: 20px;
+  line-height: 24px;
+  color: getColor("white");
+  margin-top: 20px;
+}
+footer > .container {
+  display: flex;
+}
+footer {
+  background: getColor("bg-secondary");
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.footer-contacts-link {
+  line-height: 24px;
+  color: getColor("text-light");
+}
+.footer-contacts-wrap,
+.footer-social-wrap {
+  display: inline-block;
+}
+.footer-contacts-wrap {
+  margin-right: 70px;
+  width: 231px;
+}
+.footer-social-wrap {
+  vertical-align: top;
+  margin-right: 93px;
+}
+.follow {
+  @extend %text-bold;
+  text-transform: uppercase;
+  color: getColor("white");
+  margin-top: 12px;
+}
+
+.social-list {
+  @extend %flex-between;
+  margin-top: 20px;
+}
+.social-list a {
+  @extend %icons-social;
+  color: getColor("white");
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-list li:not(:last-child) {
+  margin-right: 10px;
+}
+.social-list li .svg-icon-footer {
+  fill: currentColor;
+}
+
+.footer-form-wrap {
+  display: inline-block;
+  vertical-align: top;
+  width: 570px;
+}
+.footer-form {
+  margin-top: 20px;
+  display: inline-flex;
+}
+.footer-form input {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background: getColor("bg-secondary");
+  width: 358px;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-right: 12px;
+  height: 50px;
+  padding-left: 16px;
+}
+
+.svg-subscribe {
+  vertical-align: middle;
+}
+.footer-label {
+  position: relative;
+}
+.footer-label-name {
+  position: absolute;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.subscribe-button {
+  @extend %flex-center;
+  justify-content: space-evenly;
+}

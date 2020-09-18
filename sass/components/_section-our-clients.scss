@@ -1,0 +1,26 @@
+.our-clients {
+  padding-bottom: 94px;
+  padding-top: 94px;
+}
+.our-clients-list {
+  @extend %flex-between;
+  margin-top: 50px;
+}
+.our-clients-list a {
+  @extend %flex-center;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid getColor("icon-color");
+  border-radius: 4px;
+  color: getColor("icon-color");
+  @include transitioned(color);
+  @include transitioned(border);
+  &:hover {
+    border: 1px solid getColor("accent");
+    color: getColor("accent");
+  }
+}
+.our-clients-list li .svg-icon-logos {
+  fill: currentColor;
+}

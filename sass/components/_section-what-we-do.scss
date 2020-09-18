@@ -1,0 +1,24 @@
+.what-we-do {
+  padding-bottom: 94px;
+  padding-top: 47px;
+}
+
+.what-we-do-list {
+  @extend %flex-between;
+  margin-top: 50px;
+  li {
+    position: relative;
+  }
+  .label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    @extend %text-bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: getColor("white");
+    background: getColor("bg-section-what-we-do");
+    padding-top: 27px;
+  }
+}

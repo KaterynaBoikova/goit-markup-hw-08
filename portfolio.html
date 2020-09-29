@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Document</title>
     <link rel="stylesheet" href="./css/portfolio.min.css" />
     <link
@@ -22,36 +23,62 @@
           <a href="./index.html" class="logo toplogo"
             >Web<span class="logo-black">Studio</span></a
           >
-          <ul class="top-nav-links">
-            <li>
-              <a href="./index.html" class="state-color">Студия</a>
-            </li>
-            <li>
-              <a href="./portfolio.html" class="state-color current"
-                >Портфолио</a
-              >
-            </li>
-            <li><a href="" class="state-color">Контакты</a></li>
-          </ul>
+          <button
+            class="btn-nav-menu"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            data-menu-button
+          >
+            <svg
+              class=""
+              width="40"
+              height="40"
+              aria-label="Переключатель мобильного меню"
+            >
+              <use class="menu" href="./images/symbol-defs.svg#icon-menu"></use>
+              <use
+                class="menu-close"
+                href="./images/symbol-defs.svg#icon-menu-close"
+              ></use>
+            </svg>
+          </button>
+          <div class="mobile-nav" id="mobile-nav" data-menu>
+            <ul class="top-nav-links">
+              <li>
+                <a href="./index.html" class="state-color current">Студия</a>
+              </li>
+              <li>
+                <a href="./portfolio.html" class="state-color">Портфолио</a>
+              </li>
+              <li><a href="" class="state-color">Контакты</a></li>
+            </ul>
+
+            <ul class="top-nav-contacts">
+              <li>
+                <a href="mailto:info@devstudio.com" class="state-color"
+                  ><svg class="svg-icon icon-mail" width="16" height="11">
+                    <use
+                      href="./images/symbol-defs.svg#icon-envelope"
+                    ></use></svg
+                  >info@devstudio.com</a
+                >
+              </li>
+              <li>
+                <a href="tel:+380961111111" class="state-color"
+                  ><svg class="svg-icon" width="10" height="15">
+                    <use
+                      href="./images/symbol-defs.svg#icon-smartphone"
+                    ></use></svg
+                  >+38 096 111 11 11</a
+                >
+              </li>
+            </ul>
+          </div>
         </nav>
-        <ul class="top-nav-contacts">
-          <li>
-            <a href="mailto:info@devstudio.com" class="state-color"
-              ><svg class="svg-icon" width="16" height="12">
-                <use href="./images/symbol-defs.svg#icon-envelope"></use></svg
-              >info@devstudio.com</a
-            >
-          </li>
-          <li>
-            <a href="tel:+380961111111" class="state-color"
-              ><svg class="svg-icon" width="10" height="16">
-                <use href="./images/symbol-defs.svg#icon-smartphone"></use></svg
-              >+38 096 111 11 11</a
-            >
-          </li>
-        </ul>
       </div>
     </header>
+
     <main>
       <section class="portfolio-filters">
         <div class="container">
@@ -270,7 +297,7 @@
       </section>
     </main>
     <footer>
-      <div class="container">
+      <div class="container footer-container">
         <div class="footer-contacts-wrap">
           <ul class="footer-list">
             <li>
@@ -343,5 +370,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

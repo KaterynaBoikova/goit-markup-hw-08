@@ -36,18 +36,31 @@ p {
 }
 
 .container {
-  width: 1200px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
 }
 
 h2 {
   font-weight: bold;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 28px;
+  line-height: 33px;
   text-align: center;
+  @media screen and (min-width: $desktop) {
+    font-size: 36px;
+    line-height: 42px;
+  }
 }
 .btn-primary {
   font-weight: bold;
@@ -65,4 +78,9 @@ h2 {
   min-width: 200px;
   border: none;
   height: 50px;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

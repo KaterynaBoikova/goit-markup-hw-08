@@ -1,16 +1,40 @@
 .our-clients {
-  padding-bottom: 94px;
-  padding-top: 94px;
+  padding-bottom: 30px;
+  padding-top: 60px;
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 94px;
+    padding-top: 94px;
+  }
 }
 .our-clients-list {
-  @extend %flex-between;
-  margin-top: 50px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media screen and (min-width: $desktop) {
+    margin-top: 50px;
+    flex-wrap: nowrap;
+  }
 }
-.our-clients-list a {
-  @extend %flex-center;
-  justify-content: center;
-  width: 170px;
+.our-clients-list li {
+  width: calc((100% - 1 * 30px) / 2);
   height: 90px;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 2 * 30px) / 3);
+  }
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 5 * 30px) / 6);
+  }
+}
+
+.our-clients-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+
   border: 1px solid getColor("icon-color");
   border-radius: 4px;
   color: getColor("icon-color");
@@ -19,6 +43,12 @@
   &:hover {
     border: 1px solid getColor("accent");
     color: getColor("accent");
+  }
+  @media screen and (min-width: $tablet) {
+    width: 226px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 170px;
   }
 }
 .our-clients-list li .svg-icon-logos {

@@ -1,13 +1,84 @@
 header {
-  border: 1px solid getColor("header-line");
+  border-bottom: 1px solid getColor("header-line");
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
 }
 .navmain {
-  @extend %flex-center;
+  position: relative;
 }
+.mobile-nav {
+  @media screen and (max-width: 767px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background: getColor("white");
+    left: 0px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    padding-top: 52px;
+    padding-bottom: 52px;
+    display: none;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-nav.is-open {
+    display: block;
+    z-index: 100;
+    border-top: 1px solid getColor("header-line");
+  }
+}
+
 .top-nav {
-  @extend %flex-center;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.btn-nav-menu {
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+  }
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn-nav-menu .menu-close {
+    display: none;
+  }
+
+  .btn-nav-menu.is-open .menu-close {
+    display: block;
+  }
+
+  .btn-nav-menu.is-open .menu {
+    display: none;
+  }
 }
 
 .state-color {
@@ -27,32 +98,109 @@ header {
   bottom: 0;
   left: 0;
 }
-
 .top-nav-links {
-  display: flex;
-  a {
-    @extend %top-nav-a;
-    color: getColor("text-primary");
-    position: relative;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
   }
-  li:not(:last-child) {
+}
+
+.top-nav-links a {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: getColor("text-primary");
+  position: relative;
+  @media screen and (max-width: 767px) {
+    padding: 12px;
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+.top-nav-links li:not(:last-child) {
+  @media screen and (min-width: $tablet) {
     margin-right: 50px;
   }
 }
 
 .top-nav-contacts {
-  display: flex;
-  margin-left: auto;
-  a {
-    @extend %flex-center;
-    @extend %top-nav-a;
-    color: getColor("text-secondary");
-  }
   .svg-icon {
     fill: currentColor;
-    margin-right: 10px;
+    margin-right: 8px;
   }
-  li + li {
-    margin-left: 30px;
+  @media screen and (max-width: 767px) {
+    margin-top: 32px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-left: auto;
+  }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+  }
+}
+.svg-icon.icon-mail {
+  @media screen and (min-width: $tablet) {
+    width: 14px;
+    height: 10px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 16px;
+    height: 12px;
+  }
+}
+
+.svg-icon.icon-mob {
+  @media screen and (min-width: $tablet) {
+    width: 10px;
+    height: 14px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 10px;
+    height: 16px;
+  }
+}
+
+.top-nav-contacts {
+  a {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: getColor("text-secondary");
+    display: inline-block;
+    @media screen and (max-width: 767px) {
+      padding: 8px;
+      font-size: 18px;
+      line-height: 21px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 12px;
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  li:not(:last-child) {
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-right: 30px;
+      margin-bottom: 0px;
+    }
   }
 }

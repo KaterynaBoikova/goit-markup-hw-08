@@ -1,13 +1,30 @@
 .portfolio-list {
-  @extend %flex-between;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+  }
 }
 
 .portfolio-filters {
-  padding-top: 94px;
-  padding-bottom: 25px;
+  padding-top: 60px;
+  padding-bottom: 5px;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 15px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 25px;
+  }
 }
-
+.portfolio-list li {
+  margin-bottom: 15px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0px;
+  }
+}
 .portfolio-list li:not(:last-child) {
   margin-right: 8px;
 }

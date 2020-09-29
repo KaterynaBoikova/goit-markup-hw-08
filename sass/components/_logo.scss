@@ -2,11 +2,22 @@
   font-family: getFont("logo"), getFont("auto");
   color: getColor("accent");
   font-weight: bold;
-  font-size: 26px;
-  line-height: 31px;
+  font-size: 24px;
+  line-height: 28px;
+  align-self: center;
+  @media screen and (min-width: $desktop) {
+    font-size: 26px;
+    line-height: 31px;
+  }
 }
 .logo.toplogo {
-  margin-right: 93px;
+  margin-right: 0;
+  @media screen and (min-width: $tablet) {
+    margin-right: 88px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 93px;
+  }
 }
 .logo-black {
   color: getColor("text-primary");

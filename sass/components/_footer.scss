@@ -1,99 +1,119 @@
-.footer-contacts {
-  margin-top: 9px;
-}
-.footer-address {
-  margin-top: 20px;
-  line-height: 24px;
-  color: getColor("white");
-  margin-top: 20px;
-}
-footer > .container {
-  display: flex;
-}
 footer {
   background: getColor("bg-secondary");
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.footer-contacts-link {
-  line-height: 24px;
-  color: getColor("text-light");
+.footer-container {
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  @media screen and (min-width: $desktop) {
+    text-align: left;
+  }
 }
-.footer-contacts-wrap,
-.footer-social-wrap {
-  display: inline-block;
+.footer-contacts {
+  margin-top: 8px;
 }
 .footer-contacts-wrap {
-  margin-right: 70px;
-  width: 231px;
+  .footer-address {
+    line-height: 24px;
+    color: getColor("white");
+    margin-top: 20px;
+  }
+  .footer-contacts-link {
+    line-height: 24px;
+    color: getColor("text-light");
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 70px;
+  }
 }
+.footer-social-wrap,
+.footer-form-wrap {
+  .follow {
+    @extend %text-bold;
+    text-transform: uppercase;
+    color: getColor("white");
+  }
+}
+
 .footer-social-wrap {
-  vertical-align: top;
-  margin-right: 93px;
-}
-.follow {
-  @extend %text-bold;
-  text-transform: uppercase;
-  color: getColor("white");
-  margin-top: 12px;
-}
-
-.social-list {
-  @extend %flex-between;
-  margin-top: 20px;
-}
-.social-list a {
-  @extend %icons-social;
-  color: getColor("white");
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.social-list li:not(:last-child) {
-  margin-right: 10px;
-}
-.social-list li .svg-icon-footer {
-  fill: currentColor;
+  margin-top: 60px;
+  @media screen and (min-width: $tablet) {
+    margin-top: 5px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 12px;
+  }
+  .social-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .social-list {
+    a {
+      @extend %icons-social;
+      color: getColor("white");
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+  .social-list li:not(:last-child) {
+    margin-right: 10px;
+  }
+  .social-list li .svg-icon-footer {
+    fill: currentColor;
+  }
 }
 
 .footer-form-wrap {
-  display: inline-block;
-  vertical-align: top;
-  width: 570px;
-}
-.footer-form {
-  margin-top: 20px;
-  display: inline-flex;
-}
-.footer-form input {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-  border-radius: 4px;
-  background: getColor("bg-secondary");
-  width: 358px;
-  font-size: 16px;
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.6);
-  margin-right: 12px;
-  height: 50px;
-  padding-left: 16px;
+  margin-top: 60px;
+  @media screen and (min-width: $desktop) {
+    margin-top: 12px;
+    margin-left: auto;
+  }
 }
 
-.svg-subscribe {
-  vertical-align: middle;
-}
-.footer-label {
-  position: relative;
-}
-.footer-label-name {
-  position: absolute;
-  font-size: 16px;
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.6);
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-}
-.subscribe-button {
-  @extend %flex-center;
-  justify-content: space-evenly;
+.footer-form {
+  input {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background: getColor("bg-secondary");
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @media screen and (min-width: $tablet) {
+      display: block;
+      width: 450px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 358px;
+      display: inline-block;
+      margin-right: 12px;
+    }
+  }
+
+  .footer-label {
+    position: relative;
+  }
+
+  .footer-label-name {
+    position: absolute;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+  }
+  .svg-subscribe {
+    vertical-align: bottom;
+  }
 }

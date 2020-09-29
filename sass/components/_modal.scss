@@ -6,6 +6,7 @@
   height: 100%;
   background: getColor("bg-backdrop");
   opacity: 1;
+  overflow-y: scroll;
   @include transitioned(opacity, 550ms);
   &.is-hidden {
     opacity: 0;
@@ -15,10 +16,14 @@
     }
   }
 }
+body.modal-open {
+  overflow: hidden;
+}
 
 .modal {
-  width: 528px;
-  height: 581px;
+  width: 100%;
+  height: auto;
+
   background: getColor("white");
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -27,9 +32,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  padding: 40px 39px 40px 41px;
   @include transitioned(transform, 550ms);
-  padding: 40px 39px 40px 41px;
+  padding: 40px;
+
+  @media screen and (min-width: $mobile) {
+    width: 450px;
+    height: 609px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .btn-close {

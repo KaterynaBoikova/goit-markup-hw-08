@@ -262,6 +262,11 @@ header {
   }
 }
 
+.btn-nav-menu {
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @media screen and (max-width: 767px) {
   .btn-nav-menu {
     margin-left: auto;
@@ -277,6 +282,14 @@ header {
   .btn-nav-menu {
     display: none;
   }
+}
+
+.btn-nav-menu svg {
+  fill: currentColor;
+}
+
+.btn-nav-menu:hover {
+  color: #2196f3;
 }
 
 @media screen and (max-width: 767px) {
@@ -488,9 +501,13 @@ h1 {
 }
 
 .hero {
-  background: #2f303a;
   padding-top: 118px;
   padding-bottom: 118px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/hero-image.jpg"), #2f303a;
+  background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-image.jpg"), #2f303a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero button {
@@ -502,6 +519,22 @@ h1 {
   .hero {
     padding-top: 200px;
     padding-bottom: 200px;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .hero {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/hero-image2.jpg"), #2f303a;
+    background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-image2.jpg"), #2f303a;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero.is-open {
+    display: none;
   }
 }
 
@@ -698,20 +731,25 @@ h1 {
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   padding-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 @media screen and (min-width: 480px) {
   .our-team-list > li {
     padding-bottom: 30px;
     width: 450px;
-    height: 622px;
+  }
+  .our-team-list > li:last-child {
+    margin-bottom: 0px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .our-team-list > li {
     width: 354px;
-    height: 536px;
+  }
+  .our-team-list > li:nth-last-child(-n + 2) {
+    margin-bottom: 0px;
   }
 }
 
@@ -719,11 +757,8 @@ h1 {
   .our-team-list > li {
     width: 270px;
     height: 428px;
+    margin-bottom: 0px;
   }
-}
-
-.our-team-list > li:not(:last-child) {
-  margin-bottom: 30px;
 }
 
 .team-social-list {
@@ -746,6 +781,24 @@ h1 {
 
 .team-social-list-item .svg-icon-footer {
   fill: currentColor;
+}
+
+@media screen and (max-width: 767px) {
+  .our-team-list img {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .our-team-list img {
+    width: 354px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .our-team-list img {
+    width: 270px;
+  }
 }
 
 .our-clients {
@@ -1037,6 +1090,15 @@ body.modal-open {
   transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 40px;
+}
+
+@media screen and (max-height: 616px) {
+  .modal {
+    top: 0px;
+    left: 0px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @media screen and (min-width: 480px) {

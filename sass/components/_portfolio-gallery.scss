@@ -77,7 +77,10 @@
 .portfolio-img {
   position: relative;
   overflow: hidden;
-  height: 294px;
+  @media screen and (min-width: $desktop) {
+    width: 370px;
+    height: 294px;
+  }
 }
 .overlay {
   position: absolute;
@@ -91,4 +94,16 @@
 }
 .portfolio-cards li:hover .overlay {
   transform: translatey(0);
+}
+
+.portfolio-cards img {
+  @media screen and (max-width: 767px) {
+    width: 450px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 354px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 370px;
+  }
 }

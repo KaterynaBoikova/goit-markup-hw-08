@@ -6,7 +6,9 @@
   height: 100%;
   background: getColor("bg-backdrop");
   opacity: 1;
+
   overflow-y: scroll;
+
   @include transitioned(opacity, 550ms);
   &.is-hidden {
     opacity: 0;
@@ -35,6 +37,11 @@ body.modal-open {
   @include transitioned(transform, 550ms);
   padding: 40px;
 
+  @media screen and (max-height: 616px) {
+    top: 0px;
+    left: 0px;
+    transform: scale(1);
+  }
   @media screen and (min-width: $mobile) {
     width: 450px;
     height: 609px;

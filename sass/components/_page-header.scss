@@ -54,6 +54,7 @@ header {
 }
 
 .btn-nav-menu {
+  @include transitioned(color);
   @media screen and (max-width: 767px) {
     margin-left: auto;
     border: none;
@@ -65,6 +66,13 @@ header {
   @media screen and (min-width: $tablet) {
     display: none;
   }
+}
+
+.btn-nav-menu svg {
+  fill: currentColor;
+}
+.btn-nav-menu:hover {
+  color: getColor("accent");
 }
 
 @media screen and (max-width: 767px) {

@@ -17,11 +17,7 @@ h1 {
   padding-top: 118px;
   padding-bottom: 118px;
 
-  background: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+  background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url("../images/hero-image.jpg"), getColor("bg-secondary");
   background-size: cover;
   background-position: center;
@@ -40,20 +36,10 @@ h1 {
   screen and (min-resolution: 192dpi),
   screen and (min-resolution: 2dppx) {
   .hero {
-    background: linear-gradient(
-        to right,
-        rgba(47, 48, 58, 0.4),
-        rgba(47, 48, 58, 0.4)
-      ),
+    background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url("../images/hero-image2.jpg"), getColor("bg-secondary");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .hero.is-open {
-    display: none;
   }
 }
